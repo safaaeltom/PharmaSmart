@@ -1,6 +1,10 @@
+import Inventory from './pages/Inventory';
+
 function App() {
   return (
-    <h1>PharmaSmart</h1>
+    <div>
+      <Inventory />
+    </div>
   );
 }
 
