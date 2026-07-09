@@ -1,6 +1,6 @@
-import SearchMedicine from "../components/SearchMedicine";
-import MedicineList from "../components/MedicineList";
-import AddMedicineForm from "../components/AddMedicineForm";
+import SearchMedicine from "../components/Inventory/SearchMedicine";
+import MedicineList from "../components/Inventory/MedicineList";
+import AddMedicineForm from "../components/Inventory/AddMedicineForm";
 
 const Inventory = () => {
     return ( 
