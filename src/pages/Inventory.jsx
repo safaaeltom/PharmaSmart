@@ -1,5 +1,6 @@
 import SearchMedicine from "../components/Inventory/SearchMedicine";
 import MedicineList from "../components/Inventory/MedicineList";
+import HideMedicineList from "../components/Inventory/HideMedicineList"
 import AddMedicineForm from "../components/Inventory/AddMedicineForm";
 
 const medicines = [
@@ -15,8 +16,8 @@ const Inventory = () => {
             <h1>Inventory</h1>
             <SearchMedicine />
             <MedicineList medicines={medicines}/> 
+            <HideMedicineList />
             <AddMedicineForm/>
-            <p>Manage medicines here</p>
         </div>
      );
 }
