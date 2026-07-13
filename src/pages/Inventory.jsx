@@ -1,3 +1,4 @@
+import { useState } from "react"; 
 import SearchMedicine from "../components/Inventory/SearchMedicine";
 import MedicineList from "../components/Inventory/MedicineList";
 import HideMedicineList from "../components/Inventory/HideMedicineList"
@@ -11,12 +12,19 @@ const medicines = [
     ];
 
 const Inventory = () => {
+    const [hideMedicines, setHideMedicines] = useState(false);
+
     return ( 
         <div>
             <h1>Inventory</h1>
             <SearchMedicine />
-            <MedicineList medicines={medicines}/> 
-            <HideMedicineList />
+
+            {!hideMedicines && <MedicineList medicines={medicines}/>}
+            
+            <HideMedicineList 
+                hideMedicines={hideMedicines}
+                setHideMedicines={setHideMedicines}
+            />
             <AddMedicineForm/>
         </div>
      );
