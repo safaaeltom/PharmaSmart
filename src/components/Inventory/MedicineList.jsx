@@ -1,4 +1,4 @@
-const MedicineList = ({medicines, increaseMedicine}) => {
+const MedicineList = ({medicines, increaseMedicine, decreaseMedicine}) => {
 
     return ( 
         <div id="medicines-list">
@@ -11,6 +11,9 @@ const MedicineList = ({medicines, increaseMedicine}) => {
                         <span className="quantity">{medicine.quantity}</span>
                         <button onClick={()=>increaseMedicine(medicine.id)}>
                             +
+                        </button>
+                        <button onClick={()=>decreaseMedicine(medicine.id)}>
+                            -
                         </button>
                         <span className="delete">Delete</span>
                         <span className="edit">Edit</span>
