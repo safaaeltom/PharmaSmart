@@ -27,7 +27,7 @@ const Inventory = () => {
         );
     };
 
-    const decreaseMedicine =(id)=>{
+    const decreaseMedicine = (id) =>{
         setMedicines(
             medicines.map((medicine)=>{
                 if(medicine.id===id && medicine.quantity>0){
@@ -41,10 +41,13 @@ const Inventory = () => {
         );
     };
     
-
+    const deleteMedicine = (id) =>{
+        setMedicines(
+            medicines.filter((medicine)=>medicine.id !== id)
+        );
+    };
 
     const [hideMedicines, setHideMedicines] = useState(false);
-
 
     return ( 
         <div>
@@ -54,7 +57,8 @@ const Inventory = () => {
             {!hideMedicines && <MedicineList 
                 medicines={medicines}
                 increaseMedicine={increaseMedicine} 
-                decreaseMedicine={decreaseMedicine}/>
+                decreaseMedicine={decreaseMedicine}
+                deleteMedicine={deleteMedicine}/>
                 }   
             <HideMedicineList 
                 hideMedicines={hideMedicines}
