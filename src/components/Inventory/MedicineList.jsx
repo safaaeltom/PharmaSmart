@@ -1,4 +1,4 @@
-const MedicineList = ({medicines}) => {
+const MedicineList = ({medicines, increaseMedicine}) => {
 
     return ( 
         <div id="medicines-list">
@@ -9,6 +9,9 @@ const MedicineList = ({medicines}) => {
                     <li key={medicine.id}>
                         <span className="name">{medicine.name}</span>
                         <span className="quantity">{medicine.quantity}</span>
+                        <button onClick={()=>increaseMedicine(medicine.id)}>
+                            +
+                        </button>
                         <span className="delete">Delete</span>
                         <span className="edit">Edit</span>
                     </li>
