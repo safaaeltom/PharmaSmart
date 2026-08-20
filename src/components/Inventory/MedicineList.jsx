@@ -5,7 +5,9 @@ const MedicineList = ({
     deleteMedicine,
     editMedicine,
     editingMedicineId,
-    setEditingMedicineId
+    setEditingMedicineId,
+    input,
+    setInput
 }) => {
 
     return ( 
@@ -26,10 +28,18 @@ const MedicineList = ({
                     <button onClick={() => deleteMedicine(medicine.id)}>
                         Delete
                     </button>
-                    <button onClick={()=>setEditingMedicineId(medicine.id)}>
+                    <button onClick={()=>{
+                        setEditingMedicineId(medicine.id);
+                        setInput(medicine.name);
+                    }}>
                         Edit
                     </button>
-                    {medicine.id === editingMedicineId && <div>Editing...</div>}                      
+                    {medicine.id === editingMedicineId && 
+                    (<input
+                    value= {input}
+                    type= "text"
+                    onChange={(e)=>setInput(e.target.value)}
+                    />)}                      
                 </li>
                 ))}
             </ul>

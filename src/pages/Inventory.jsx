@@ -61,6 +61,7 @@ const Inventory = () => {
 
     const [hideMedicines, setHideMedicines] = useState(false);
     const [editingMedicineId, setEditingMedicineId] = useState(null);
+    const [input, setInput] = useState("");
 
     return ( 
         <div>
@@ -74,7 +75,9 @@ const Inventory = () => {
                 deleteMedicine={deleteMedicine}
                 editMedicine={editMedicine}
                 editingMedicineId={editingMedicineId}
-                setEditingMedicineId={setEditingMedicineId} />
+                setEditingMedicineId={setEditingMedicineId}
+                input={input}
+                setInput={setInput} />
                 }   
             <HideMedicineList 
                 hideMedicines={hideMedicines}
