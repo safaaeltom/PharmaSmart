@@ -2,7 +2,8 @@ const MedicineList = ({
     medicines, 
     increaseMedicine, 
     decreaseMedicine,
-    deleteMedicine
+    deleteMedicine,
+    editMedicine
 }) => {
 
     return ( 
@@ -23,6 +24,7 @@ const MedicineList = ({
                         <button onClick={() => deleteMedicine(medicine.id)}>
                             Delete
                         </button>
+                        <button>Edit</button>
                         <span className="edit">Edit</span>
                     </li>
                 ))}

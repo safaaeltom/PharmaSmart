@@ -47,6 +47,18 @@ const Inventory = () => {
         );
     };
 
+    const editMedicine = (id, newName) =>{
+        setMedicines(
+            medicines.map((medicine)=>{
+                if(medicine.id===id){
+                    return {...medicine, name:newName};
+                }
+                return medicine
+            })
+
+        );
+    };
+
     const [hideMedicines, setHideMedicines] = useState(false);
 
     return ( 
@@ -58,7 +70,8 @@ const Inventory = () => {
                 medicines={medicines}
                 increaseMedicine={increaseMedicine} 
                 decreaseMedicine={decreaseMedicine}
-                deleteMedicine={deleteMedicine}/>
+                deleteMedicine={deleteMedicine}
+                editMedicine={editMedicine} />
                 }   
             <HideMedicineList 
                 hideMedicines={hideMedicines}
