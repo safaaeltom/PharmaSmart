@@ -3,7 +3,9 @@ const MedicineList = ({
     increaseMedicine, 
     decreaseMedicine,
     deleteMedicine,
-    editMedicine
+    editMedicine,
+    editingMedicineId,
+    setEditingMedicineId
 }) => {
 
     return ( 
@@ -12,21 +14,23 @@ const MedicineList = ({
 
             <ul>
                 {medicines.map((medicine)=>(
-                    <li key={medicine.id}>
-                        <span className="name">{medicine.name}</span>
-                        <span className="quantity">{medicine.quantity}</span>
-                        <button onClick={()=>increaseMedicine(medicine.id)}>
-                            +
-                        </button>
-                        <button onClick={()=>decreaseMedicine(medicine.id)}>
-                            -
-                        </button>
-                        <button onClick={() => deleteMedicine(medicine.id)}>
-                            Delete
-                        </button>
-                        <button>Edit</button>
-                        <span className="edit">Edit</span>
-                    </li>
+                <li key={medicine.id}>
+                    <span className="name">{medicine.name}</span>
+                    <span className="quantity">{medicine.quantity}</span>
+                    <button onClick={()=>increaseMedicine(medicine.id)}>
+                        +
+                    </button>
+                    <button onClick={()=>decreaseMedicine(medicine.id)}>
+                        -
+                    </button>
+                    <button onClick={() => deleteMedicine(medicine.id)}>
+                        Delete
+                    </button>
+                    <button onClick={()=>setEditingMedicineId(medicine.id)}>
+                        Edit
+                    </button>
+                    {medicine.id === editingMedicineId && <div>Editing...</div>}                      
+                </li>
                 ))}
             </ul>
         </div>
