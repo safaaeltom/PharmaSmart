@@ -17,7 +17,14 @@ const MedicineList = ({
             <ul>
                 {medicines.map((medicine)=>(
                 <li key={medicine.id}>
-                    <span className="name">{medicine.name}</span>
+                    {medicine.id === editingMedicineId ? 
+                    (<input
+                    value= {input}
+                    type= "text"
+                    onChange={(e)=>setInput(e.target.value)}
+                    />):(
+                        <span className="name">{medicine.name}</span>
+                    )} 
                     <span className="quantity">{medicine.quantity}</span>
                     <button onClick={()=>increaseMedicine(medicine.id)}>
                         +
@@ -33,13 +40,7 @@ const MedicineList = ({
                         setInput(medicine.name);
                     }}>
                         Edit
-                    </button>
-                    {medicine.id === editingMedicineId && 
-                    (<input
-                    value= {input}
-                    type= "text"
-                    onChange={(e)=>setInput(e.target.value)}
-                    />)}                      
+                    </button>                     
                 </li>
                 ))}
             </ul>
