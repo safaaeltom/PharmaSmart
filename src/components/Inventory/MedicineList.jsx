@@ -36,8 +36,13 @@ const MedicineList = ({
                         Delete
                     </button>
                     <button onClick={()=>{
-                        setEditingMedicineId(medicine.id);
-                        setInput(medicine.name);
+                        if(medicine.id===editingMedicineId){
+                           editMedicine(editingMedicineId, input);
+                           setEditingMedicineId(null)
+                        }else{
+                           setEditingMedicineId(medicine.id);
+                           setInput(medicine.name)}
+                        
                     }}>
                         Edit
                     </button>                     
