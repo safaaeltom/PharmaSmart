@@ -44,7 +44,7 @@ const MedicineList = ({
                            setInput(medicine.name)}
                         
                     }}>
-                        Edit
+                        {medicine.id===editingMedicineId ? "Save" : "Edit"}
                     </button>                     
                 </li>
                 ))}

@@ -6,10 +6,10 @@ import AddMedicineForm from "../components/Inventory/AddMedicineForm";
 
 const Inventory = () => {
     const [medicines, setMedicines] = useState([
-        { id: 1, name: "Paracetamol", quantity: 24 },
-        { id: 2, name: "Ibuprofen", quantity: 5 },
-        { id: 3, name: "Atenolol", quantity: 17 },
-        { id: 4, name: "Amoxicillin", quantity: 37 }
+        { id: 1, name: "Paracetamol ", quantity: 24 },
+        { id: 2, name: "Ibuprofen ", quantity: 5 },
+        { id: 3, name: "Atenolol ", quantity: 17 },
+        { id: 4, name: "Amoxicillin ", quantity: 37 }
     ]);
 
     const increaseMedicine = (id) =>{
