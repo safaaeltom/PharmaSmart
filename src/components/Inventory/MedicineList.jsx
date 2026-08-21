@@ -35,11 +35,11 @@ const MedicineList = ({
                     <button onClick={() => deleteMedicine(medicine.id)}>
                         Delete
                     </button>
-                    <button onClick={()=>{
-                        if(medicine.id===editingMedicineId){
+                    <button onClick={()=>{ 
+                        if(medicine.id===editingMedicineId){   //Second click already editing then saving
                            editMedicine(editingMedicineId, input);
                            setEditingMedicineId(null)
-                        }else{
+                        }else{                        //first click medicine not being edited
                            setEditingMedicineId(medicine.id);
                            setInput(medicine.name)}
                         
